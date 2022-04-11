@@ -26,13 +26,18 @@ public class Board {
     @JoinColumn(name = "category_id")
     private Category category;
 
-    @OneToMany(mappedBy = "board")
-    private List<Reply> replyList = new ArrayList<>();
-
     private String title;
     @Lob
     private String description;
     private Long hit;
     private LocalDateTime postTime;
 
+    public void setBoard(Member member, Category category, String title, String description, Long hit, LocalDateTime postTime) {
+        this.member = member;
+        this.category = category;
+        this.title = title;
+        this.description = description;
+        this.hit = hit;
+        this.postTime = postTime;
+    }
 }

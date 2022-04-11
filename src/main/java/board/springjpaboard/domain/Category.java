@@ -16,9 +16,6 @@ public class Category {
     @Id @GeneratedValue
     private Long id;
 
-    @OneToMany(mappedBy = "category")
-    List<Board> boardList = new ArrayList<>();
-
     private String name;
 
     @ManyToOne(fetch = LAZY)
@@ -27,4 +24,10 @@ public class Category {
 
     @OneToMany(mappedBy = "parent")
     private List<Category> childList = new ArrayList<>();
+
+    public void setCategory(String name, Category parent, List<Category> childList) {
+        this.name = name;
+        this.parent = parent;
+        this.childList = childList;
+    }
 }

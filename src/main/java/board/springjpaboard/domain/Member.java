@@ -15,8 +15,6 @@ public class Member {
     @Column(name = "member_id")
     private Long id;
 
-    @OneToMany(mappedBy = "member")
-    private List<Board> boardList = new ArrayList<>();
 
     @Column(name = "username")
     private String name;
@@ -27,5 +25,12 @@ public class Member {
 
     @Enumerated(EnumType.STRING)
     private Degree degree;
+
+    public void setMember(String name, int age, Address address, Degree degree){
+        this.name = name;
+        this.age = age;
+        this.address = address;
+        this.degree = degree;
+    }
 
 }

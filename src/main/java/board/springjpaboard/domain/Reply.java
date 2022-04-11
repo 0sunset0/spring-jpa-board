@@ -25,4 +25,10 @@ public class Reply {
 
     private String description;
 
+    //댓글은 수정할 수 없음
+    public Reply(Member member, Board board, String description) {
+        this.member = member;
+        this.board = board;
+        this.description = description;
+    }
 }
