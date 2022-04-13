@@ -15,8 +15,7 @@ public class Member {
     @Column(name = "member_id")
     private Long id;
 
-
-    @Column(name = "username")
+    @Column(name = "username", unique = true)
     private String name;
     private int age;
 
@@ -26,11 +25,9 @@ public class Member {
     @Enumerated(EnumType.STRING)
     private Degree degree;
 
-    public void setMember(String name, int age, Address address, Degree degree){
+    public void setMember(String name, int age, Address address) {
         this.name = name;
         this.age = age;
         this.address = address;
-        this.degree = degree;
     }
-
 }
